@@ -1,0 +1,87 @@
+.kss-navigation {
+    @include typeface-get(lato);
+    color: colour-get(grey);
+    background: colour-get(grey, lightest);
+    border-right: 1px solid colour-get(grey, lighter);
+}
+
+.kss-navigation__header {
+    display: flex;
+    padding: rem-calc(layout-get(spacing));
+}
+    .kss-navigation__heading {}
+
+.kss-navigation__list{
+    font-size: rem-calc(14px);
+    padding: 0;
+    margin: 0;
+}
+
+.kss-navigation__container {
+    margin-right: -1px;
+}
+
+.kss-navigation__item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+    .kss-navigation__name {
+      margin-right: auto;
+      display: flex;
+    }
+
+    .kss-navigation__ref {
+        color: colour-get(grey, dark);
+        background-color: colour-get(grey, lighter);
+        border-radius: 1000px;
+        padding: rem-calc(3px) rem-calc(8px);
+        font-size: rem-calc(10px);
+    }
+
+    .kss-navigation__item--active > .kss-navigation__item-link .kss-navigation__ref {
+        color: colour-get(orange, dark);
+        background-color: colour-get(orange, lighter);
+
+        border-radius: 1000px;
+        padding: rem-calc(3px) rem-calc(8px);
+        font-size: rem-calc(10px);
+    }
+
+
+
+    .kss-navigation__item--depth- > .kss-navigation__name,
+    .kss-navigation__item--depth-1 > .kss-navigation__name {
+        font-weight: bold;
+    }
+    .kss-navigation__item--depth-2 .kss-navigation__name {
+        font-size: rem-calc(12px);
+        padding-left: rem-calc(8px);
+    }
+    .kss-navigation__item--depth-3 .kss-navigation__name {
+        font-size: rem-calc(12px);
+        padding-left: rem-calc(16px);
+    }
+
+.kss-navigation__item-link {
+    text-decoration: none;
+    color: colour-get(orange);
+    padding: rem-calc(14px) rem-calc(24px);
+    border-bottom: 1px solid colour-get(grey, lighter);
+    border-right: 1px solid colour-get(grey, lighter);
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.kss-navigation__item--depth-1:first-child .kss-navigation__item-link {
+    border-top: 1px solid colour-get(grey, lighter);
+}
+
+.kss-navigation__item--current > .kss-navigation__item-link {
+    @include typeface-get(lato, bold);
+    background-color: white;
+    border-right: 1px solid white;
+}

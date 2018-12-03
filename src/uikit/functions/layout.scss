@@ -1,0 +1,21 @@
+/*
+layout-get
+
+`padding-left: layout-get($scheme, $tone);`
+
+Get a named type size from the layout map
+see `construct/settings/_layout.scss`
+
+Compatible untested.
+
+$name - The logical name
+
+Styleguide Core.Functions.Type
+*/
+@function layout-get($name) {
+  @if map-has-key($settings__layout, $name) != true {
+    @return $name;
+  }
+
+  @return map-get($settings__layout, $name);
+}

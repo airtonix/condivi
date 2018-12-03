@@ -1,0 +1,14 @@
+<div class="kss-specimans kss-specimans--colors">
+    {{#kssColors colours}}
+    <div class="kss-speciman kss-speciman--color" style="background-color:{{color.hex}}">
+    <div class="kss-speciman__description">
+        <strong class="kss-speciman__field  kss-speciman__name">{{color.name}}</strong>
+        <code class="kss-speciman__field kss-speciman__field--code kss-color__var">{{color.var}}</code>
+        <code class="kss-speciman__field kss-speciman__field--code kss-color__hex">{{color.hex}}</code>
+        <code class="kss-speciman__field kss-speciman__field--code kss-color__rgb">rgb({{color.rgb.r}}, {{color.rgb.g}}, {{color.rgb.b}})</code>
+        <code class="kss-speciman__field kss-speciman__field--code kss-color__hsl">hsl({{color.hsl.h}}, {{color.hsl.s}}, {{color.hsl.l}})</code>
+        <code class="kss-speciman__field kss-speciman__field--code kss-color__description">{{{color.desc}}}</code>
+    </div>
+    </div>
+    {{/kssColors}}
+</div>

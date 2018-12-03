@@ -1,0 +1,7 @@
+$settings__layout: (
+  artboard-width: 1440px,                 // max width of designed artboard
+  canvas-width: 1160px,                   // max width of designed content
+  pagebody-width: (1160px - 332px),       // width of page body content (article, generic page)
+  pageaside-width: 332px,                 // width of aside
+  spacing: 15px,
+) !default;

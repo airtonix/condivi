@@ -1,0 +1,8 @@
+.kss-page__sidebar {
+    transform: translateX(0);
+    min-width: rem-calc(240px);
+}
+.kss-page--is-index .kss-page__body {
+    max-width: calc(100% - 240px);
+    margin-left: 0;
+}

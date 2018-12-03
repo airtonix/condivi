@@ -1,0 +1,18 @@
+<div class="kss-navigation__header">
+    <h1 class="kss-navigation__heading">{{options.title}}</h1>
+</div>
+<nav class="kss-navigation__container">
+    <ul class="kss-navigation__list">
+        {{> partials.navigationItem
+            referenceNumbers=0
+            header="Introduction"
+            href="index.html"
+            isActive=@root.template.isHomepage
+        }}
+
+        {{#each menu }}
+            {{> partials.navigationItem
+                href=(concat "section-" referenceURI ".html")}}
+        {{/each}}
+    </ul>
+</nav>

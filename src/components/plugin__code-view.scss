@@ -1,0 +1,7 @@
+.kss-markup {
+    display: none;
+}
+    .kss-component--markup-visible .kss-markup { display: block; }
+
+    .kss-markup__container {}
+        .kss-markup__code {}

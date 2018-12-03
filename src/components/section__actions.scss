@@ -1,0 +1,31 @@
+
+.kss-section-actions {
+  margin: 0;
+  padding: 10px;
+
+  display: flex;
+  background: white;
+  border-bottom: 2px solid #eee;
+  @include typeface-get(lato);
+}
+
+.kss-section-actions__heading {
+  width: auto
+}
+
+  .kss-section-actions__header {
+    margin: 0;
+    margin-right: 1rem;
+    color: colour-get(grey, dark);
+    @include typeface-get(lato, bold);
+    font-size: rem(12px);
+  }
+
+.kss-section-actions__items {
+  flex-grow: 1;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{options.title}}</title>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="generator" content="kss-node">
+    <meta name="turbolinks-cache-control" content="no-cache">
+
+    <link rel="stylesheet" href="{{ asseturl '/static/theme/styleguide/prism.css' }}">
+    <link rel="stylesheet" href="{{ asseturl '/static/theme/styles/styleguide.css' }}">
+
+    {{{styles}}}
+
+    {{#with (SectionAssets options.assets (SectionReferences sections)) }}
+        {{#each css}}<link rel="stylesheet" href="{{ asseturl this }}">{{/each}}
+    {{/with}}
+  </head>
+
+  <body>
+    <div class="kss-page {{#if @root.template.isItem}}kss-page--is-item{{else}}kss-page--is-index{{/if}}">
+      {{#unless @root.template.isItem }}
+      <!-- header. -->
+      <header class="kss-page__header kss-header">
+          <div class="kss-header__inner">
+              <a class="kss-header__hamburger-trigger"><span class="kss-header__hamburger"></span></a>
+              <h1 class="kss-header__title kss-title">{{options.title}}</h1>
+          </div>
+      </header>
+      <!-- /header. -->
+      {{/unless}}
+
+      <div class="kss-page__content">
+
+        {{#unless @root.template.isItem}}
+        <!-- navigation. -->
+        <section class="kss-page__sidebar kss-navigation">
+            {{> partials.navigation }}
+        </section>
+        <!-- /navigation. -->
+        {{/unless}}
+
+        <!-- documentation. -->
+        <div class="kss-page__body">
+          {{#if template.isHomepage }}
+            {{> partials.homepage }}
+          {{/if}}
+          {{#each sections}}
+          <!-- section -->
+              {{#if (and (eq @first true) (eq @root.template.isItem false) )}}
+                {{> partials.root }}
+              {{else}}
+                {{> partials.component }}
+              {{/if}}
+          <!-- /section -->
+          {{/each}}
+        </div>
+        <!-- /documentation. -->
+      </div>
+
+      <div class="kss-page__footer"></div>
+    </div>
+
+    <div data-mediaquery-sensor></div>
+    <!-- scripts. -->
+
+    <script>window.Promise || document.write('<script src="//cdn.jsdelivr.net/es6-promise/4.1.0/es6-promise.auto.min.js"><\/script>')</script>
+
+
+    {{#each options.js}}
+      <script defer src="{{ asseturl this }}"></script>
+    {{/each}}
+
+    {{#with (SectionAssets options.assets (SectionReferences sections)) }}
+        {{#each js}}<script defer src="{{ asseturl this }}"></script>{{/each}}
+    {{/with}}
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<div class="kss-component__header">
+    <div class="kss-component__header-container">
+        <a class="kss-component__permalink"
+           href="#kssref-{{referenceURI}}">
+            <h{{depth}} class="kss-component__heading">
+            <span class="kss-component__ref">{{referenceNumber}}</span>
+            <span class="kss-component__name">{{header}}</span>
+            </h{{depth}}>
+        </a>
+        {{#if source.filename}}
+        <p class="kss-component__source">Source:
+            <span>{{source.filename}}</span>, line
+            <span>{{source.line}}</span>
+        </p>
+        {{/if}}
+    </div>
+
+    {{#if (or modifiers.length example) }}
+        {{#> partials.toolbar classes="kss-component__toolbar kss-toolbar--dark" }}
+            {{#if @root.template.isItem }}
+            <a class="kss-toolbar__button" href="./index.html">
+                <span class="kss-toolbar__button-container">
+                    <i class="kss-toolbar__icon material-icons">arrow_upward</i>
+                </span>
+            </a>
+            {{/if}}
+            <button class="kss-toolbar__button"
+                    alt="toggle fullscreen"
+                    data-kss-code-view
+                    data-kss-code-view--button-class="kss-toolbar__button--active"
+                    data-kss-code-view--reference="kssref-{{referenceURI}}"
+                    data-kss-code-view--target="#kssref-{{referenceURI}}">
+                <span class="kss-toolbar__button-container">
+                    <i class="kss-toolbar__icon material-icons">code</i>
+                </span>
+            </button>
+            <button class="kss-toolbar__button"
+                    alt="toggle fullscreen"
+                    data-kss-fullscreen
+                    data-kss-fullscreen--button-class="kss-toolbar__button--active"
+                    data-kss-fullscreen--reference="kssref-{{referenceURI}}"
+                    data-kss-fullscreen--target="#kssref-{{referenceURI}}">
+                <span class="kss-toolbar__button-container">
+                    <i class="kss-toolbar__icon material-icons">fullscreen</i>
+                </span>
+            </button>
+            <!--
+            <button class="kss-toolbar__button"
+                    alt="toggle overflow"
+                    data-kss-overflow--button-class="kss-toolbar__button--active"
+                    data-kss-overflow="kssref-{{referenceURI}}">
+                <span class="kss-toolbar__button-container">
+                    <i class="kss-toolbar__icon material-icons">tab_unselected</i>
+                </span>
+            </button>
+            <button class="kss-toolbar__button"
+                    alt="toggle show guides"
+                    data-kss-guides="kssref-{{referenceURI}}">
+                <span class="kss-toolbar__button-container">
+                    <i class="kss-toolbar__icon material-icons">border_style</i>
+                </span>
+            </button>
+            // -->
+            <a class="kss-toolbar__button"
+                alt="Show in new window"
+                href="item-{{referenceURI}}.html"
+                target="_blank">
+                <span class="kss-toolbar__button-container">
+                    <i class="kss-toolbar__icon material-icons">open_in_new</i>
+                </span>
+            </a>
+        {{/partials.toolbar}}
+    {{/if}}
+
+    {{#if description}}
+    <div class="kss-component__description wysiwyg-area">{{{description}}}</div>
+    {{/if}}
+</div>

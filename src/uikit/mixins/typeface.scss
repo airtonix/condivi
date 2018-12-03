@@ -1,0 +1,36 @@
+
+/*
+Turn a map into a series of css `attribute: value;`
+*/
+@mixin map-as-attributes($property-value-map) {
+    @each $property, $value in $property-value-map {
+      #{$property}: $value;
+    }
+  }
+
+
+  @mixin typeface-get($family, $variant: normal) {
+    @if not map-has-key($settings__typeface, $family) {
+      @include map-as-attributes((
+          "font-family": sans-serif,
+          "font-weight": $variant
+      ));
+    }
+
+    @else {
+      $family-map: map-get($settings__typeface, $family);
+
+      // test if $family-map has $variant
+      @if not map-has-key($family-map, $variant) {
+          @warn "Font name `#{$family}` doesn't define a variant named #{$variant}.";
+          // try to use normal instead.
+          @include map-as-attributes(map-get($family-map, normal));
+      }
+      // $variant exists, lets use it.
+      @else {
+          // print out a list of attributes.
+          @include map-as-attributes(map-get($family-map, $variant));
+      }
+    }
+
+  }

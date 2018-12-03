@@ -1,0 +1,93 @@
+<!-- component -->
+<section class="kss-component kss-component--depth-{{depth}}"
+         id="kssref-{{referenceURI}}">
+    <div class="kss-component__container">
+
+        <article class="kss-component__content">
+            {{> partials.componentHeading }}
+            {{> partials.componentParameters }}
+        </article>
+
+        {{#if example}}
+        <article class="kss-component__sections">
+
+            <div class="kss-component__section">
+
+                <div class="kss-component__section-header">
+                    <strong class="kss-component__section-heading"
+                           for="kss-component-section--{{referenceURI}}">Example{{#if modifiers}}s{{/if}}</strong>
+                </div>
+
+                {{> partials.markup classes="kss-component__markup" }}
+
+                {{#if actions}}
+                <div class="kss-component-actions">
+                    <div class="kss-component-actions__header">
+                        <h3 class="kss-component-actions__heading">Actions</h3>
+                    </div>
+                    <div class="kss-component-actions__items">
+                        {{{actions}}}
+                    </div>
+                </div>
+                {{/if}}
+
+                {{> partials.modifier name="Default Styling" }}
+
+                {{#each modifiers}}
+                    {{> partials.modifier }}
+                {{/each}}
+            </div>
+
+            {{#if colours}}
+            <div class="kss-component__section">
+                <div class="kss-component__section-header">
+                    <strong class="kss-component__section-heading">Colours</strong>
+                </div>
+                {{> partials.specimanColours }}
+            </div>
+            {{/if}}
+
+            {{#if icons}}
+            <div class="kss-component__section">
+                <div class="kss-component__section-header">
+                    <strong class="kss-component__section-heading">Icons</strong>
+                </div>
+                {{> partials.specimanIcons }}
+            </div>
+            {{/if}}
+
+            {{#if tests}}
+            <div class="kss-component__section">
+                <div class="kss-component__section-header">
+                    <strong class="kss-component__section-heading">Tests</strong>
+                    {{#> partials.toolbar classes="kss-component__section-toolbar kss-toolbar--light" }}
+                    <button class="kss-toolbar__button"
+                            alt="Run tests"
+                            data-kss-test-runner
+                            data-kss-test-runner--namespace="{{referenceURI}}"
+                            data-kss-test-runner--report-to="#kss-component__tap-report--{{referenceURI}}">
+                        <span class="kss-toolbar__button-container">
+                            <i class="kss-toolbar__icon material-icons">playlist_play</i>
+                        </span>
+                    </button>
+                    {{/partials.toolbar}}
+                </div>
+                <div class="kss-component__section-content"
+                     id="kss-component__tap-report--{{referenceURI}}"></div>
+                <script type="text/javascript">
+                    window.addEventListener('load', () => {
+                        kssTestRunner.on('{{referenceURI}}', (test) => {
+                            {{{tests}}}
+                        });
+                    });
+                </script>
+            </div>
+            {{/if}}
+
+
+        </article>
+        {{/if}}
+
+    </div>
+</section>
+<!-- /component -->

@@ -1,0 +1,27 @@
+/*
+Typeface Map
+
+Styleguide Core.Settings.Typeface
+*/
+$settings__typeface--LATO: 'Lato', sans-serif;
+$settings__typeface--OXYGENMONO: 'Oxygen Mono', monospace;
+
+
+$settings__typeface: (
+    lato: (
+        normal: (
+            font-family: $settings__typeface--LATO,
+            font-weight: normal
+        ),
+        bold: (
+            font-family: $settings__typeface--LATO,
+            font-weight: 700
+        )
+    ),
+    oxygenmono: (
+        normal: (
+            font-family: $settings__typeface--OXYGENMONO,
+            font-weight: normal
+        ),
+    )
+);

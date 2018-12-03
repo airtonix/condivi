@@ -1,0 +1,15 @@
+{{#if parameters}}
+    <div class="kss-section__parameters">
+        <ul class="kss-parameters">
+        {{#each parameters}}
+        <li class="kss-parameters__item">
+            <p class="kss-parameters__description">
+            {{{description}}} {{#if defaultValue}} Defaults to:
+            <code>{{defaultValue}}</code> {{/if}}
+            </p>
+            <code class="kss-parameters__name">{{name}}</code>
+        </li>
+        {{/each}}
+        </ul>
+    </div>
+{{/if}}

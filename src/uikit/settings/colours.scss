@@ -1,0 +1,61 @@
+
+
+$settings__colours: (
+    // primary theme color of the styleguide.
+    cowabunga: (
+        default: #E87E04,
+    ),
+
+    // secondary colors.
+    black: (
+        default: #222222,
+    ),
+
+    grey: (
+        lightest: #f8f8f7,
+        lighter: #e6e1da,
+        light: #bfbab6,
+        default: #aca8a4,
+        dark: #7c7871,
+        darker: #4a4845,
+        darkest: #4a4845
+    ),
+    white: (
+        default: #FFFFFF,
+    ),
+
+    // utility colors.
+    blue: (
+        default: #3498DB,
+    ),
+    green: (
+        lightest: lighten(#2ECC71, 25%),
+        lighter: lighten(#2ECC71, 20%),
+        light: lighten(#2ECC71, 15%),
+        default: #2ECC71,
+        dark: darken(#2ECC71, 15%),
+        darker: darken(#2ECC71, 20%),
+        darkest: darken(#2ECC71, 25%),
+    ),
+    orange: (
+        lightest: lighten(#f60, 38%),
+        lighter: lighten(#f60, 25%),
+        light: lighten(#f60, 15%),
+        default: #f60,
+        dark: darken(#f60, 15%),
+    ),
+    red: (
+        lightest: lighten(#E74C3C, 38%),
+        lighter: lighten(#E74C3C, 25%),
+        light: lighten(#E74C3C, 15%),
+        default: #E74C3C,
+        dark: darken(#E74C3C, 15%),
+        darker: darken(#E74C3C, 20%),
+        darkest: darken(#E74C3C, 25%)
+    ),
+);
+
+$settings__colours--theme-names: (
+    grey
+);
+

@@ -1,0 +1,14 @@
+.kss-modifier {}
+    .kss-modifier__header {
+        background-color: colour-get(grey, lightest);
+    }
+        .kss-modifier__heading {
+            @include typeface-get(lato);
+            font-size: rem-calc(12px);
+            color: colour-get(grey, dark);
+            padding: rem-calc(layout-get(spacing));
+        }
+
+    .kss-modifier__example {
+        padding: rem-calc(layout-get(spacing));
+    }

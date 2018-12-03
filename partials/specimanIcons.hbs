@@ -1,0 +1,15 @@
+{{#kssIcons icons}}
+<div class="kss-specimans kss-specimans--icons">
+    <div class="kss-speciman kss-speciman--icon">
+    <div class="kss-speciman__demo">
+        <i class="kss-speciman__demo-icon icon {{icon.classname}}"></i>
+    </div>
+    <div class="kss-speciman__description">
+        <strong class="kss-speciman__field kss-speciman__field--code kss-icon__name">{{icon.name}}</strong>
+        {{#if icon.classname}}
+        <code class="kss-speciman__field kss-speciman__field--code kss-icon__classname">{{{color.classname}}}</code>{{/if}} {{#if icon.description}}
+        <p class="kss-speciman__field kss-speciman__field--code kss-icon__description">{{{color.description}}}</p>{{/if}}
+    </div>
+    </div>
+</div>
+{{/kssIcons}}

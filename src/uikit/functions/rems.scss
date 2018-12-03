@@ -1,0 +1,44 @@
+/*
+Unit Functions
+
+Various functions that help with coverting units.
+
+Styleguide Core.Functions.Units
+*/
+
+
+/*
+rem-calc
+
+Convert pixels to rems.
+
+```
+font-size: rem-calc(20px);
+padding: rem-calc(120px);
+max-width: calc(100% - #{rem-calc(120px)});
+```
+
+$value - The desired px size
+$base [$base-font-size] - The base px size
+
+Styleguide Core.Functions.Units.RemCalc
+*/
+/// The base px size
+/// @type {px}
+$base-font-size: 16px !default;
+@function rem-calc($value, $base: $base-font-size) {
+    //make sure the divider is not 0
+    @if $base==0 {
+        @error 'rem-calc: Context cannot be `0`.';
+    }
+
+    //return a unit less 0 (best practice)
+    @if $value==0 {
+        @return 0;
+    }
+    //make sure units are in px
+    @if (unit($value) !='px' or unit($value) !='px') {
+        @error 'rem-calc: Units must be `px`. was #{$value}';
+    }
+    @return ($value / $base) * 1rem;
+}

@@ -1,0 +1,15 @@
+<li class="kss-navigation__item kss-navigation__item--depth-{{depth}} {{#if isActive}}kss-navigation__item--current{{/if}}">
+    <a class="kss-navigation__item-link"
+        href="{{href}}">
+        {{#if referenceNumber}}<span class="kss-navigation__ref">{{referenceNumber}}</span>{{/if}}
+        <span class="kss-navigation__name">{{header}}</span>
+    </a>
+    {{#if children}}
+    <ul class="kss-navigation__list">
+        {{#each children}}
+            {{> partials.navigationItem
+                href=(concat "section-" ../referenceURI ".html#kssref-" referenceURI) }}
+        {{/each}}
+    </ul>
+    {{/if}}
+</li>

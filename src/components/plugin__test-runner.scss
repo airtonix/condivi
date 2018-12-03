@@ -1,0 +1,48 @@
+@import "~@kss/uikit/index";
+
+.kss-test {
+    background: colour-get(grey, darkest);
+    color: colour-get(grey, lighter);
+    border-left: 4px solid colour-get(black);
+}
+.kss-test__name {
+        @include typeface-get(lato, bold);
+        font-size: rem-calc(16px);
+        padding: rem-calc(8px);
+    }
+
+.kss-test-assertion {
+    @include typeface-get(lato);
+    padding: rem-calc(8px);
+    &:before {
+        padding: rem-calc(4px) rem-calc(8px);
+        border-radius: 1000px;
+        font-size: rem-calc(10px);
+        margin: rem-calc(4px);
+        display: inline-block;
+    }
+}
+    .kss-test-assertion--pass {
+        border-left: 4px solid colour-get(green);
+        &:before {
+            content: "passed";
+            background: colour-get(green, dark);
+            color: colour-get(green, lightest);
+        }
+    }
+    .kss-test-assertion--fail {
+        border-left: 4px solid colour-get(red);
+        &:before {
+            content: "failed";
+            background: colour-get(red, dark);
+            color: colour-get(red, lighter);
+        }
+    }
+    .kss-test-assertion__error {
+        @include typeface-get(oxygenmono);
+        font-size: rem-calc(16px);
+    }
+    .kss-test-assertion__results {
+        padding: rem-calc(4px);
+    }
+        .kss-test-assertion__result { display: inline; }

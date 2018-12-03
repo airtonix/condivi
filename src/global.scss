@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+body, html {
+    display: block;
+    min-height: 100%;
+    height: 100%;
+}

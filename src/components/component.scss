@@ -1,0 +1,90 @@
+.kss-component {
+    @include typeface-get(lato);
+    margin: rem-calc(4px) rem-calc(4px) rem-calc(4px) rem-calc(4px);
+    position: relative;
+}
+    .kss-component__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .kss-component__header {
+        background: colour-get(orange);
+        padding: rem-calc(layout-get(spacing));
+
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+        .kss-component__heading {
+            align-self: flex-end;
+
+            @include typeface-get(lato, bold);
+            color: colour-get(white);
+            margin: 0;
+        }
+        .kss-component__permalink {
+            text-decoration: none;
+        }
+        .kss-component__source {
+            font-size: rem-calc(12px);
+            color: colour-get(orange, lightest);
+        }
+        .kss-component__description {
+            color: colour-get(white);
+        }
+    .kss-component--depth-1 .kss-component__heading {
+        font-size: rem-calc(28px);
+    }
+    .kss-component--depth-2 .kss-component__heading {
+        font-size: rem-calc(22px);
+    }
+    .kss-component--depth-3 .kss-component__heading {
+        font-size: rem-calc(18px);
+    }
+    .kss-component--depth-4 .kss-component__heading {
+        font-size: rem-calc(16px);
+    }
+
+
+    .kss-component__toolbar {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        .kss-toolbar__button--active {
+            background-color: colour-get(white);
+            .kss-toolbar__icon { color: colour-get(orange); }
+        }
+    }
+
+    .kss-component__example {}
+
+    .kss-component__sections {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .kss-component__section-header {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        background-color: colour-get(grey, lighter);
+    }
+    .kss-component__section-heading {
+        font-size: rem-calc(14px);
+        @include typeface-get(lato);
+        color: colour-get(grey, dark);
+        padding: rem-calc(layout-get(spacing));
+    }
+
+    .kss-modifiers__modifier-example {
+        border: 1px solid colour-get(grey, lightest);
+        padding: rem-calc(24px);
+    }
+
+

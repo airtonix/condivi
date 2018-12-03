@@ -1,0 +1,64 @@
+/*
+Colour Functions
+
+Styleguide Core.Functions.Colour
+*/
+
+/*
+colour-get
+
+
+Get a colour shade from the colour palette
+see `construct/settings/_colours.scss`
+
+`color: colour-get($scheme, $tone);`
+
+Compatible untested.
+
+$scheme - The major color.
+$tone   - options shade.
+
+Styleguide Core.Functions.Colour.Get
+*/
+@function colour-get($scheme, $tone: default) {
+  @if map-has-key($settings__colours, $scheme) != true {
+    @return $scheme;
+  }
+  $group: map-get($settings__colours, $scheme);
+
+  @if map-has-key($group, $tone) != true {
+    @return $scheme;
+  }
+
+  @return map-get($group, $tone);
+}
+
+
+/*
+contrast-colour
+
+Given a background colour, a desired light and dark foreground colours,
+calculate which foreground variant should be used based on the contrast level
+of the background colour;
+
+```
+$bg: red;
+color: contrast-colour($bg, $dark-fg, $light-fg);
+```
+
+Compatible untested.
+
+$bg - The background colour to test.
+$dark-fg   - dark foreground variant.
+$light-fg   - light foreground variant.
+
+Styleguide Core.Functions.Colour.Get
+*/
+@function contrast-colour ($color, $dark: black, $light: white, $threshold: 75) {
+  @if (saturation($color) < $threshold) {
+    @return $light;
+  }
+  @else  {
+    @return $dark;
+  }
+}

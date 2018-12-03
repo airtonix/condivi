@@ -1,0 +1,10 @@
+@function map-pick($map, $key) {
+  $output: ();
+
+  @each $name, $group in $map {
+    $item: ($name: map-get($group, $key));
+    $output: map-merge($output, $item);
+  }
+
+  @return $output;
+}

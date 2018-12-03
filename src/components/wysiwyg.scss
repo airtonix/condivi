@@ -1,0 +1,5 @@
+.wysiwyg-area {
+    padding: rem-calc(layout-get(spacing));
+
+    @include typeface-get(lato);
+}
